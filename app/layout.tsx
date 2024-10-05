@@ -2,17 +2,21 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "./provider";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Roboto } from 'next/font/google';
+import { Roboto_Mono } from 'next/font/google';
 
-const geistSans = localFont({
-  src: "../public/fonts/GeistVF.woff",
+const geistSans = Roboto({
+  weight: ['100', '300', '400', '500', '700', '900'],
   variable: "--font-geist-sans",
-  weight: "100 900",
+  subsets: ['latin'],
 });
-const geistMono = localFont({
-  src: "../public/fonts/GeistMonoVF.woff",
+
+const geistMono = Roboto_Mono({
+  weight: ['100', '300', '400', '500', '700'],
   variable: "--font-geist-mono",
-  weight: "100 900",
+  subsets: ['latin'],
 });
+
 
 export const metadata: Metadata = {
   title: "SaifCodes",
